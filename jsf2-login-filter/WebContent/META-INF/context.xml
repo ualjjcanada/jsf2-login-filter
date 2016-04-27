@@ -1,0 +1,14 @@
+<Context docBase="jsf2-login-filter" path="/jsf2-login-filter">
+
+<!-- ==================== Configuración para MySQL DEV local ===================== -->
+	<Resource name="jdbc/loginapp" 
+			auth="Container"
+            type="javax.sql.DataSource"
+            username="root" 
+            password="root" 
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/loginapp"
+            maxIdle="5" 
+            maxActive="50"/>
+
+</Context>
