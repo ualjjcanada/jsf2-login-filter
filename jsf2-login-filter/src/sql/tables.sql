@@ -8,3 +8,4 @@ password VARCHAR(60) NOT NULL,
 PRIMARY KEY(uid));
 
 INSERT INTO Users VALUES(1,'admin','admin');
+INSERT INTO Users VALUES(2,'pepe','pepe');
