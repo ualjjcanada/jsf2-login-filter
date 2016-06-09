@@ -5,6 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
+  <finalName>${project.artifactId}-${project.version}</finalName> 
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>test</testSourceDirectory>
     <plugins>
@@ -49,15 +50,17 @@
           <settingsKey>sensibleKey</settingsKey>
         </configuration>
 
+		<!--  Para ejecutar estos pasos de inicialización de la BD: 
+				clean sql:execute@create-db sql:execute@create-schema   
+		-->
  		<executions>
  		<execution>
             <id>create-db</id>
-            <phase>process-test-resources</phase>
             <goals>
               <goal>execute</goal>
             </goals>
             <configuration>
-              <url>jdbc:mysql://localhost:3306/loginapp</url>
+              <url>jdbc:mysql://localhost:3306/</url>
               <!-- no transaction -->
               <autocommit>true</autocommit>
               <sqlCommand>create database IF NOT EXISTS loginapp</sqlCommand>
@@ -65,7 +68,6 @@
           </execution>
         <execution>
             <id>create-schema</id>
-            <phase>process-test-resources</phase>
             <goals>
               <goal>execute</goal>
             </goals>
@@ -81,7 +83,7 @@
       
       </plugin>
     </plugins>
-    <finalName>${project.artifactId}</finalName>
+
   </build>
   	<dependencies>
   		<dependency>
