@@ -1,5 +1,5 @@
 ## MySql en Docker
 
 ```
-docker run -d -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=root mysql
+docker run -p 3306:3306 --name memories -e MYSQL_ROOT_PASSWORD=root -d mysql:5.6
 ```
