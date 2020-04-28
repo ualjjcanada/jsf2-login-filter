@@ -13,8 +13,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
@@ -43,7 +43,7 @@
               <!-- common configuration shared by all executions -->
         <configuration>
           <driver>com.mysql.jdbc.Driver</driver>
-          <url>jdbc:mysql://localhost:3306/loginapp</url>
+          <url>jdbc:mysql://localhost:33060/loginapp</url>
           <username>root</username>
           <password>root</password>
           <!-- You can comment out username/password configurations and have maven to look them up in your settings.xml using ${settingsKey} -->
@@ -72,6 +72,7 @@
               <goal>execute</goal>
             </goals>
             <configuration>
+              <url>jdbc:mysql://localhost:3306/loginapp</url>
               <autocommit>true</autocommit>
 	          <srcFiles>
                 <srcFile>src/sql/tables.sql</srcFile>
